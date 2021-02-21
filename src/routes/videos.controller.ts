@@ -16,7 +16,6 @@ export const getVideo: RequestHandler = async (req, res) => {
         return res.status(204).json();
         
     return res.json(videoFound);
-
 };
 
 export const createVideos: RequestHandler = async (req, res) => {
@@ -29,8 +28,12 @@ export const createVideos: RequestHandler = async (req, res) => {
     res.json(savedVideo);
 };
 
-export const deleteVideos: RequestHandler = (req, res) => {
-    res.json('deleting a video');
+export const deleteVideos: RequestHandler = async (req, res) => {
+    const videoFound = await Video.findByIdAndDelete(req.params.id)
+    if(!videoFound) 
+        return res.status(204).json();
+        
+    return res.json(videoFound);    
 };
 
 export const updateVideos: RequestHandler = (req, res) => {
