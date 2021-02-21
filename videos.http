@@ -6,8 +6,15 @@ GET {{api}}/videos
 ###
 GET {{api}}/videos/1
 
-###
+### CREATE A VIDEO
 POST {{api}}/videos
+Content-Type: application/json
+
+{
+    "url": "https://www.youtube.com/watch?v=bpOSxM0rNPM",
+    "title": "Do I Wanna Know",
+    "author": "Arctic Monkeys"
+}
 
 ###
 DELETE {{api}}/videos/1

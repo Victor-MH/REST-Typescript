@@ -6,7 +6,7 @@ const videoSchema = new Schema({
         required: true,
         trim: true,
     },
-    description: {
+    author: {
         type: String,
         trim: true,
     },
