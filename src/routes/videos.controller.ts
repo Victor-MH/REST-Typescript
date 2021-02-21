@@ -2,12 +2,21 @@ import {RequestHandler} from 'express';
 import Video from './Video';
 
 export const getVideos: RequestHandler = async (req, res) => {
-    const videos = await Video.find()
-    return res.json(videos);
+    try {
+        const videos = await Video.find()
+        return res.json(videos);
+    } catch (error) {
+        res.json(error);
+    }
 };
 
-export const getVideo: RequestHandler = (req, res) => {
-    res.json('getting a single video');
+export const getVideo: RequestHandler = async (req, res) => {
+    const videoFound = await Video.findById(req.params.id)
+    if(!videoFound) 
+        return res.status(204).json();
+        
+    return res.json(videoFound);
+
 };
 
 export const createVideos: RequestHandler = async (req, res) => {

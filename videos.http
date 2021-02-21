@@ -3,17 +3,17 @@
 
 GET {{api}}/videos
 
-###
-GET {{api}}/videos/1
+### Los id deben tener 24 chars, de otro modo no funciona
+GET {{api}}/videos/6031d71e980aad29480d88fd
 
 ### CREATE A VIDEO
 POST {{api}}/videos
 Content-Type: application/json
 
 {
-    "url": "https://www.youtube.com/watch?v=bpOSxM0rNPM",
-    "title": "Do I Wanna Know",
-    "author": "Arctic Monkeys"
+    "url": "https://www.youtube.com/watch?v=uJ_1HMAGb4k",
+    "title": "Riptide",
+    "author": "Vance Joy"
 }
 
 ###
