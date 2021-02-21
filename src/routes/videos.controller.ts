@@ -1,8 +1,9 @@
 import {RequestHandler} from 'express';
 import Video from './Video';
 
-export const getVideos: RequestHandler = (req, res) => {
-    res.json('getting videos');
+export const getVideos: RequestHandler = async (req, res) => {
+    const videos = await Video.find()
+    return res.json(videos);
 };
 
 export const getVideo: RequestHandler = (req, res) => {
@@ -10,6 +11,10 @@ export const getVideo: RequestHandler = (req, res) => {
 };
 
 export const createVideos: RequestHandler = async (req, res) => {
+    const videoFound = await Video.findOne({url: req.body.url});
+    if(videoFound)
+        return res.status(301).json({message: 'The URL already exists'})
+    
     const video = new Video(req.body);
     const savedVideo = await video.save();
     res.json(savedVideo);
