@@ -9,13 +9,13 @@ export const getVideo: RequestHandler = (req, res) => {
 };
 
 export const createVideos: RequestHandler = (req, res) => {
-    res.json('creating videos');
+    res.json('creating a video');
 };
 
 export const deleteVideos: RequestHandler = (req, res) => {
-    res.json('deleting videos');
+    res.json('deleting a video');
 };
 
 export const updateVideos: RequestHandler = (req, res) => {
-    res.json('updating videos');
+    res.json('updating a video');
 };
