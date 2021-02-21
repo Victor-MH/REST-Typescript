@@ -13,7 +13,7 @@ import config from './config';
         
         const db = await mongoose.connect(`mongodb://${config.MONGO_HOST}/${config.MONGO_DATABASE}`,
         mongooseOptions);
-        console.log('database is connected to ', db.connection.name);
+        console.log('Database is connected to:', db.connection.name);
     } catch (error) {
         console.error(error)   
     }

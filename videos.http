@@ -4,7 +4,7 @@
 GET {{api}}/videos
 
 ### Los id deben tener 24 chars, de otro modo no funciona
-GET {{api}}/videos/6031d71e980aad29480d88fd
+GET {{api}}/videos/6031e46e0a417a23746a783a
 
 ### CREATE A VIDEO
 POST {{api}}/videos
@@ -13,11 +13,16 @@ Content-Type: application/json
 {
     "url": "https://www.youtube.com/watch?v=uJ_1HMAGb4k",
     "title": "Riptide",
-    "author": "Vance Joy"
+    "author": "Vancy"
 }
 
 ###
-DELETE {{api}}/videos/1
+DELETE {{api}}/videos/6031e46e0a417a23746a783a
 
 ###
-PUT {{api}}/videos/1
+PUT {{api}}/videos/6031e46e0a417a23746a783a
+Content-Type: application/json
+
+{
+    "author": "Vance Joy"
+}
